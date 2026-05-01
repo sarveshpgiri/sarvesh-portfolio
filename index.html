@@ -75,11 +75,11 @@
     }
 
     .experience-left {
-      flex: 0 0 280px; /* Fixed width for company box */
+      flex: 0 0 280px; 
     }
 
     .experience-right {
-      flex: 1; /* Takes remaining space */
+      flex: 1; 
     }
 
     .card {
@@ -106,7 +106,7 @@
     ul { padding-left: 20px; margin-top: 0; }
     li { margin-bottom: 10px; line-height: 1.5; }
 
-    /* BRAND LOGO GRID */
+    /* BRAND LOGO GRID - UPDATED FIX */
     .brand-grid {
       display: flex;
       flex-wrap: wrap;
@@ -117,28 +117,28 @@
     }
 
     .brand-item {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 15px;
+      background: #ffffff; /* White card background to show original logo colors */
+      padding: 12px;
       border-radius: 12px;
       width: 140px;
       height: 90px;
       display: flex;
       justify-content: center;
       align-items: center;
-      transition: transform 0.3s ease, background 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     }
 
     .brand-item:hover {
       transform: scale(1.05);
-      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 6px 20px rgba(56,189,248,0.4);
     }
 
     .brand-item img {
       max-width: 100%;
       max-height: 100%;
-      filter: brightness(0) invert(1); /* Makes logos white for dark theme */
-      opacity: 0.9;
       object-fit: contain;
+      /* Filter removed to fix the solid white block issue */
     }
 
     .footer {
@@ -148,7 +148,6 @@
       color: #94a3b8;
     }
 
-    /* Responsive adjustments */
     @media (max-width: 850px) {
       .experience-row {
         flex-direction: column;
@@ -219,7 +218,6 @@
   </ul>
 </div>
 
-<!-- PROFESSIONAL EXPERIENCE SECTION -->
 <div class="section">
   <h2>Professional Experience</h2>
 
@@ -252,7 +250,7 @@
     <div class="experience-right">
       <ul>
         <li>Led hiring and mentorship of Associate CSMs, supporting their growth and successful execution of Core CS responsibilities, ensuring successful retention & renewals of their customers. Managed a book of business worth 24 Million USD.</li>
-        <li>Utilized AI (Artificial Intelligence) tools to streamline daily workflows in executing daily responsibilities quickly and efficiently with ease.</li>
+        <li>Utilized AI tools to streamline daily workflows in executing daily responsibilities quickly and efficiently with ease.</li>
         <li>Develop a long term relationship with customers, ensuring a smooth lifecycle with onboarding, deployment & continuous support.</li>
         <li>Align the customer business objectives with the product offerings, finding areas of improvement, expressing value in the offerings to ensure customers continue to leverage the solution to maximize their profitability and market share.</li>
         <li>Manage customer expectations collaboratively with internal & external resources for speedy resolutions.</li>
@@ -284,7 +282,6 @@
   </div>
 </div>
 
-<!-- AGENTS -->
 <div class="section">
   <h2>CS AGENTS BUILD</h2>
   <div class="agent">
@@ -309,7 +306,6 @@
   </div>
 </div>
 
-<!-- BRANDS WORKED WITH -->
 <div class="section">
   <h2>Brands Worked With</h2>
   <div class="brand-grid">
