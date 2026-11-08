@@ -1,339 +1,509 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Sarvesh Giri | Customer Success</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sarvesh Giri | Customer Success</title>
+<meta name="description" content="Sarvesh Giri — Senior Customer Success Manager. Retention, expansion and AI-enabled customer success.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0B1512;
+    --bg-alt: #0F1A16;
+    --surface: #12201B;
+    --border: #1F322B;
+    --border-strong: #2C443B;
+    --text: #EEF4F0;
+    --text-soft: #C5D5CE;
+    --muted: #A3B8AF;
+    --faint: #8DA49A;
+    --accent: #C6F36B;   /* change this one value to re-colour the page */
+    --on-accent: #0B1512;
+    --display: 'Sora', sans-serif;
+  }
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      color: #e2e8f0;
-    }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  a { color: #D6F59A; }
+  a:hover { color: #FFFFFF; }
+  h1, h2, h3 { margin: 0; }
+  p { margin: 0; }
+  ul { margin: 0; }
+  strong { color: #FFFFFF; }
+  section[id] { scroll-margin-top: 84px; }
 
-    .header {
-      background: linear-gradient(120deg, #1e3a8a, #2563eb, #38bdf8);
-      color: white;
-      padding: 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+  .wrap { max-width: 1180px; margin: 0 auto; padding-left: 28px; padding-right: 28px; }
+  .display { font-family: var(--display); font-weight: 600; letter-spacing: -0.025em; }
+  .accent { color: var(--accent); }
 
-    .header h1 { font-size: 60px; margin: 0; }
-    .header p { font-size: 20px; margin-top: 10px; }
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    min-height: 48px; padding: 0 24px; border-radius: 999px;
+    font-weight: 600; text-decoration: none; transition: transform .15s ease, opacity .15s ease;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-accent { background: var(--accent); color: var(--on-accent); }
+  .btn-accent:hover { color: var(--on-accent); opacity: .92; }
+  .btn-light { background: var(--text); color: var(--bg); }
+  .btn-light:hover { color: var(--bg); }
+  .btn-ghost { border: 1px solid var(--border-strong); color: var(--text); }
+  .btn-ghost:hover { color: var(--text); border-color: var(--faint); }
 
-    .header-contact {
-      margin-top: 20px;
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+  /* ---------- Navigation ---------- */
+  .site-header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(11, 21, 18, 0.86);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-bar { display: flex; gap: 20px; align-items: center; justify-content: space-between; padding-top: 14px; padding-bottom: 14px; }
+  .brand { display: inline-flex; align-items: center; gap: 12px; color: var(--text); text-decoration: none; }
+  .brand:hover { color: var(--text); }
+  .brand-mark {
+    width: 36px; height: 36px; border-radius: 10px; background: var(--accent); color: var(--on-accent);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: var(--display); font-weight: 700; font-size: 14px;
+  }
+  .brand-name { font-family: var(--display); font-weight: 600; font-size: 17px; }
 
-    .contact-item a {
-      color: white;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(255,255,255,0.6);
-    }
+  .nav-links {
+    display: flex; align-items: center; gap: 4px; padding: 4px;
+    border-radius: 999px; background: var(--surface); border: 1px solid var(--border);
+  }
+  .nav-links a {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 116px; min-height: 36px; padding: 0 8px; white-space: nowrap;
+    border-radius: 999px; color: var(--muted); font-size: 14px; font-weight: 500; text-decoration: none;
+    transition: background .2s ease, color .2s ease;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-links a.active { background: var(--text); color: var(--bg); font-weight: 600; }
 
-    .profile-img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 4px solid white;
-      object-fit: cover;
-      box-shadow: 0 0 20px rgba(56,189,248,0.7);
-    }
+  .nav-actions { display: flex; align-items: center; gap: 10px; }
+  .nav-cta { min-height: 40px; padding: 0 18px; font-size: 14px; }
+  .nav-toggle {
+    display: none; align-items: center; justify-content: center;
+    width: 44px; height: 44px; border-radius: 12px;
+    border: 1px solid var(--border-strong); background: var(--surface); color: var(--text); cursor: pointer;
+  }
+  .mobile-menu { display: none; border-top: 1px solid var(--border); padding: 12px 28px 20px; flex-direction: column; gap: 4px; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a.m-link {
+    display: flex; align-items: center; justify-content: space-between; min-height: 48px; padding: 0 4px;
+    border-bottom: 1px solid #1A2B25; color: var(--text); font-family: var(--display); font-size: 18px; font-weight: 500; text-decoration: none;
+  }
+  .mobile-menu a.m-link span:last-child { font-size: 13px; color: var(--faint); }
+  .mobile-menu .btn { margin-top: 12px; }
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 30px;
-    }
+  @media (max-width: 900px) {
+    .nav-links, .nav-cta { display: none; }
+    .nav-toggle { display: inline-flex; }
+  }
 
-    .section {
-      margin-bottom: 40px;
-      padding: 30px;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(10px);
-      box-shadow: 0px 8px 25px rgba(0,0,0,0.4);
-    }
+  /* ---------- Hero ---------- */
+  .hero { display: flex; flex-wrap: wrap; gap: 48px; align-items: center; padding-top: 88px; padding-bottom: 72px; }
+  .hero-main { flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 28px; }
+  .chip {
+    display: inline-flex; align-self: flex-start; align-items: center; gap: 10px;
+    padding: 6px 14px; border-radius: 999px; border: 1px solid var(--border-strong); font-size: 13px; color: var(--text-soft);
+  }
+  .chip::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+  .hero h1 { font-size: clamp(40px, 6.2vw, 80px); line-height: 1; letter-spacing: -0.035em; }
+  .hero-lede { max-width: 580px; font-size: 18px; color: var(--muted); }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 12px; }
 
-    .section h2 {
-      color: #38bdf8;
-      margin-bottom: 15px;
-    }
+  .hero-side { flex: 1 1 320px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+  .headshot {
+    width: 280px; height: 280px; border-radius: 50%; object-fit: cover;
+    background: var(--surface); border: 3px solid var(--accent);
+  }
+  .socials { display: flex; gap: 10px; width: 100%; font-size: 14px; }
+  .socials a {
+    flex: 1 1 0; display: inline-flex; align-items: center; justify-content: center; min-height: 44px;
+    border-radius: 12px; background: var(--surface); border: 1px solid var(--border); color: var(--text); text-decoration: none;
+  }
+  .socials a:hover { border-color: var(--border-strong); color: var(--text); }
 
-    /* EXPERIENCE SPLIT LAYOUT */
-    .experience-row {
-      display: flex;
-      gap: 30px;
-      margin-bottom: 30px;
-      align-items: flex-start;
-    }
+  /* ---------- Stats ---------- */
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; padding-top: 24px; padding-bottom: 96px; }
+  .stat { border-radius: 20px; padding: 28px; background: var(--surface); border: 1px solid var(--border); display: flex; flex-direction: column; gap: 6px; }
+  .stat b { font-family: var(--display); font-size: 52px; font-weight: 600; letter-spacing: -0.03em; line-height: 1; }
+  .stat span { font-size: 15px; color: var(--muted); }
+  .stat.featured { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+  .stat.featured span { color: var(--on-accent); font-weight: 500; }
 
-    .experience-left {
-      flex: 0 0 280px; 
-    }
+  /* ---------- Section headers ---------- */
+  .section { padding-top: 112px; padding-bottom: 112px; display: flex; flex-direction: column; gap: 40px; }
+  .section-head { display: flex; flex-wrap: wrap; gap: 16px; align-items: baseline; justify-content: space-between; }
+  .section-head h2 { font-size: clamp(30px, 4vw, 48px); line-height: 1.1; }
+  .eyebrow { font-family: var(--display); font-size: 14px; color: var(--faint); }
 
-    .experience-right {
-      flex: 1; 
-    }
+  /* ---------- Case studies ---------- */
+  .cases { border-top: 1px solid var(--border); }
+  .case { display: flex; flex-wrap: wrap; gap: 12px 40px; align-items: baseline; padding: 28px 0; border-bottom: 1px solid var(--border); }
+  .case-num { flex: 0 0 200px; font-family: var(--display); font-size: 44px; font-weight: 600; letter-spacing: -0.03em; line-height: 1; color: var(--accent); }
+  .case-body { flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+  .case-body h3 { font-size: 20px; font-weight: 600; }
+  .case-body p { color: var(--muted); }
+  .case-tag { font-size: 13px; color: var(--faint); }
 
-    .card {
-      background: linear-gradient(135deg, #1e3a8a, #2563eb);
-      padding: 20px;
-      border-radius: 12px;
-    }
+  /* ---------- Experience ---------- */
+  .band { background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .jobs { display: flex; flex-direction: column; gap: 20px; }
+  .job { display: flex; flex-wrap: wrap; gap: 20px 40px; padding: 32px; border-radius: 24px; background: var(--surface); border: 1px solid var(--border); }
+  .job-meta { flex: 1 1 260px; display: flex; flex-direction: column; gap: 6px; }
+  .job-meta h3 { font-family: var(--display); font-size: 28px; font-weight: 600; }
+  .job-meta .role { font-weight: 500; }
+  .job-meta .when { font-size: 14px; color: var(--faint); }
+  .job-meta .industry { font-size: 13px; color: var(--faint); }
+  .badge { align-self: flex-start; padding: 2px 10px; border-radius: 999px; background: var(--accent); color: var(--on-accent); font-size: 12px; font-weight: 600; }
+  .job ul { flex: 999 1 480px; min-width: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 10px; color: var(--text-soft); }
 
-    .card h3 {
-      margin: 0;
-      font-size: 24px;
-    }
+  /* ---------- Agents ---------- */
+  .agents { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+  .agent { padding: 28px; border-radius: 20px; background: var(--surface); border: 1px solid var(--border); display: flex; flex-direction: column; gap: 12px; transition: border-color .2s ease; }
+  .agent:hover { border-color: var(--border-strong); }
+  .agent .tag { font-family: var(--display); font-size: 13px; color: var(--accent); }
+  .agent h3 { font-size: 19px; font-weight: 600; }
+  .agent p { font-size: 15px; color: var(--muted); }
 
-    .agent {
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      padding: 22px;
-      border-radius: 14px;
-      margin-bottom: 18px;
-      border: 1px solid rgba(56,189,248,0.4);
-    }
+  /* ---------- Toolkit + education ---------- */
+  .toolkit { display: flex; flex-wrap: wrap; gap: 48px; padding-bottom: 112px; }
+  .toolkit-main { flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px; }
+  .toolkit-main h2 { font-size: clamp(28px, 3.4vw, 40px); line-height: 1.1; }
+  .pills { list-style: none; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; }
+  .pills li { padding: 8px 14px; border-radius: 10px; background: var(--surface); border: 1px solid var(--border); }
+  .pills.ai li { background: transparent; border-color: var(--accent); color: var(--accent); }
+  .pills .label { padding: 0; margin-right: 6px; background: none; border: 0; color: var(--faint); }
+  .edu { flex: 1 1 320px; display: flex; flex-direction: column; gap: 16px; }
+  .edu-card { padding: 24px; border-radius: 20px; background: var(--surface); border: 1px solid var(--border); display: flex; flex-direction: column; gap: 4px; }
+  .edu-card h3 { font-size: 17px; font-weight: 600; }
+  .edu-card .deg { font-size: 15px; color: var(--text-soft); }
+  .edu-card .when { font-size: 14px; color: var(--faint); }
 
-    .agent h3 { color: #38bdf8; }
+  /* ---------- Brands ---------- */
+  .brands { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .brands .wrap { padding-top: 56px; padding-bottom: 56px; display: flex; flex-direction: column; gap: 24px; }
+  .brands h2 { font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); text-align: center; }
+  .brands ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 14px 40px; font-family: var(--display); font-size: 22px; font-weight: 600; color: #7E968C; }
 
-    ul { padding-left: 20px; margin-top: 0; }
-    li { margin-bottom: 10px; line-height: 1.5; }
+  /* ---------- Contact ---------- */
+  .contact { padding-top: 112px; padding-bottom: 48px; display: flex; flex-direction: column; gap: 56px; }
+  .contact-main { display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
+  .contact h2 { max-width: 820px; font-size: clamp(36px, 5.4vw, 72px); line-height: 1.02; letter-spacing: -0.035em; }
+  .contact .btn { min-height: 52px; padding: 0 26px; }
+  .site-footer { display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center; padding-top: 28px; border-top: 1px solid var(--border); font-size: 14px; }
+  .site-footer a { color: var(--text-soft); }
+  .site-footer .copy { margin-left: auto; color: var(--faint); }
+  .site-footer .top { display: inline-flex; align-items: center; gap: 6px; color: var(--text); text-decoration: none; }
 
-    /* BRAND LOGO GRID - UPDATED FIX */
-    .brand-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      align-items: center;
-      padding: 10px 0;
-    }
-
-    .brand-item {
-      background: #ffffff; /* White card background to show original logo colors */
-      padding: 12px;
-      border-radius: 12px;
-      width: 140px;
-      height: 90px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    }
-
-    .brand-item:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 20px rgba(56,189,248,0.4);
-    }
-
-    .brand-item img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      /* Filter removed to fix the solid white block issue */
-    }
-
-    .footer {
-      text-align: center;
-      padding: 20px;
-      background: #020617;
-      color: #94a3b8;
-    }
-
-    @media (max-width: 850px) {
-      .experience-row {
-        flex-direction: column;
-        gap: 15px;
-      }
-      .experience-left {
-        flex: none;
-        width: 100%;
-      }
-      .header {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 20px;
-      }
-      .profile-img {
-        margin-top: 30px;
-      }
-      .header-contact {
-        justify-content: center;
-      }
-      .brand-item {
-        width: 110px;
-        height: 70px;
-      }
-    }
-  </style>
+  @media (max-width: 600px) {
+    .hero { padding-top: 56px; }
+    .section { padding-top: 80px; padding-bottom: 80px; }
+    .job { padding: 24px; }
+    .case-num { flex-basis: 100%; }
+    .headshot { width: 220px; height: 220px; }
+  }
+</style>
 </head>
-
 <body>
 
-<div class="header">
-  <div>
-    <h1>SARVESH GIRI</h1>
-    <p>CUSTOMER SUCCESS – WEAPON OF MASS EXPANSION</p>
+<!-- ===== NAVIGATION ===== -->
+<header class="site-header">
+  <div class="wrap nav-bar">
+    <a href="#top" class="brand">
+      <span class="brand-mark">SG</span>
+      <span class="brand-name">Sarvesh Giri</span>
+    </a>
 
-    <div class="header-contact">
-      <div class="contact-item">📱 <a href="tel:+918355957821">+91-8355957821</a></div>
-      <div class="contact-item">✉️ <a href="mailto:sarveshpgiri@gmail.com">sarveshpgiri@gmail.com</a></div>
-      <div class="contact-item">🔗 <a href="https://www.linkedin.com/in/sarvesh-giri" target="_blank">LinkedIn</a></div>
-      <div class="contact-item">📸 <a href="https://www.instagram.com/sarveshg_daily" target="_blank">CSM Instagram</a></div>
-      <div class="contact-item">📝 <a href="https://sarveshgiri.substack.com/" target="_blank">CSM Blog</a></div>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#impact" data-section="impact">Impact</a>
+      <a href="#work" data-section="work">Case studies</a>
+      <a href="#experience" data-section="experience">Experience</a>
+      <a href="#agents" data-section="agents">AI agents</a>
+      <a href="#toolkit" data-section="toolkit">Toolkit</a>
+      <a href="#contact" data-section="contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="btn btn-accent nav-cta" href="SarveshGiri_CSM_Resume.pdf" download>
+        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+        Résumé
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </div>
   </div>
 
-  <img src="download.jpeg" class="profile-img">
-</div>
+  <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile">
+    <a class="m-link" href="#impact"><span>Impact</span><span>00</span></a>
+    <a class="m-link" href="#work"><span>Case studies</span><span>01</span></a>
+    <a class="m-link" href="#experience"><span>Experience</span><span>02</span></a>
+    <a class="m-link" href="#agents"><span>AI agents</span><span>03</span></a>
+    <a class="m-link" href="#toolkit"><span>Toolkit</span><span>04</span></a>
+    <a class="m-link" href="#contact"><span>Contact</span><span>05</span></a>
+    <a class="btn btn-accent" href="SarveshGiri_CSM_Resume.pdf" download>Download résumé</a>
+  </nav>
+</header>
 
-<div class="container">
+<main>
 
-<div class="section">
-  <h2>My Customer Success Story</h2>
-  <p>
-    AI-enabled Customer Success Manager with experience driving retention, expansion & long-term customer value.
-    Known for combining data-driven insights with strong relationship management to deliver measurable outcomes.
-  </p>
-  <p>
-    Over the past 8+ years, I’ve evolved from managing relationships to driving strategic business outcomes across enterprise segments.
-  </p>
-</div>
+<!-- ===== HERO ===== -->
+<section id="top" class="wrap hero">
+  <div class="hero-main">
+    <span class="chip">Senior CSM at ThoughtSpot · 8 years in CS</span>
+    <h1 class="display">Retention first.<br><span class="accent">Expansion</span> follows.</h1>
+    <p class="hero-lede">AI-enabled Customer Success Manager who pairs data with relationships — and builds agents that let CS teams spot churn and growth signals early.</p>
+    <div class="btn-row">
+      <a class="btn btn-light" href="#contact">Get in touch</a>
+      <a class="btn btn-ghost" href="#work">See the results
+        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+    </div>
+  </div>
 
-<div class="section">
-  <h2>Case Studies</h2>
-  <ul>
-    <li><strong>Tata Consumer Product Limited:</strong> Successfully retained the account with an upsell of 500k with 34% increase in adoption.</li>
-    <li><strong>Jivox Analytics:</strong> Product Launch with AI driven leading to trust development with upsell of 150k and 25% increase in adoption.</li>
-    <li><strong>Netflix:</strong> Improved adoption by 56% with rigorous training sessions and QBRs.</li>
-    <li><strong>National Association of Insurance Commissioners:</strong> Upsell of 750k with 24% increase in adoption.</li>
-  </ul>
-</div>
+  <div class="hero-side">
+    <img class="headshot" src="download.jpeg" alt="Sarvesh Giri">
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/sarvesh-giri" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://sarveshgiri.substack.com/" target="_blank" rel="noopener">Substack</a>
+      <a href="https://www.instagram.com/sarveshg_daily" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</section>
 
-<div class="section">
-  <h2>Professional Experience</h2>
+<!-- ===== IMPACT ===== -->
+<section id="impact" class="wrap stats" aria-label="Impact">
+  <div class="stat featured"><b>$40M</b><span>Book led at ThoughtSpot — $25M enterprise, $15M long tail</span></div>
+  <div class="stat"><b>−12%</b><span>Long-tail churn, opening $500K in expansion</span></div>
+  <div class="stat"><b>100%</b><span>Customer retention at OneTrust</span></div>
+  <div class="stat"><b>+125%</b><span>ARR growth across the OneTrust portfolio</span></div>
+</section>
 
-  <!-- THOUGHTSPOT -->
-  <div class="experience-row">
-    <div class="experience-left">
-      <div class="card">
-        <h3>ThoughtSpot</h3>
-        <h5><i>Senior Customer Success Manager (promoted from Customer Success Manager)</i></h5>
+<!-- ===== CASE STUDIES ===== -->
+<section id="work" class="wrap section" style="padding-top: 0;">
+  <div class="section-head">
+    <h2 class="display">Case studies</h2>
+    <span class="eyebrow">01 — Outcomes, not activity</span>
+  </div>
+  <div class="cases">
+    <article class="case">
+      <span class="case-num">750K</span>
+      <div class="case-body">
+        <h3>National Association of Insurance Commissioners</h3>
+        <p>Expansion deal with a 24% increase in adoption.</p>
       </div>
-    </div>
-    <div class="experience-right">
-      <ul>
-        <li>Be a part of a Customer Success team that manages multiple accounts consisting of commercial segments and responsible for Annual Recurring Revenue</li>
-        <li>Manage customer relation & Monitor commercial Thoughtspot customers to track onboarding, rollout and adoption, and satisfaction on 1:Many basis to identify opportunities to engage with customers on their needs and make them drive value out of Thoughtspot.</li>
-        <li>Be a primary point of contact for customers and be the voice that communicates use cases/requirements/expectations in a way that is actionable for Marketing, Sales, Support, Services, and Product teams at ThoughtSpot.</li>
-        <li>Be the companion on their journey from onboarding, adoption, and a lifetime of success.</li>
-        <li>Collaborate across ThoughtSpot departments and customize the response to the needs of our customers.</li>
-        <li>Identify growth areas in the existing customer base and help build expansion opportunities through passive selling.</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- COMMERCEIQ -->
-  <div class="experience-row">
-    <div class="experience-left">
-      <div class="card">
-        <h3>CommerceIQ</h3>
-        <h5><i>Customer Success Manager</i></h5>
+      <span class="case-tag">Upsell · +24% adoption</span>
+    </article>
+    <article class="case">
+      <span class="case-num">500K</span>
+      <div class="case-body">
+        <h3>Tata Consumer Products</h3>
+        <p>Retained the account and expanded it, lifting adoption by a third.</p>
       </div>
-    </div>
-    <div class="experience-right">
-      <ul>
-        <li>Led hiring and mentorship of Associate CSMs, supporting their growth and successful execution of Core CS responsibilities, ensuring successful retention & renewals of their customers. Managed a book of business worth 24 Million USD.</li>
-        <li>Utilized AI tools to streamline daily workflows in executing daily responsibilities quickly and efficiently with ease.</li>
-        <li>Develop a long term relationship with customers, ensuring a smooth lifecycle with onboarding, deployment & continuous support.</li>
-        <li>Align the customer business objectives with the product offerings, finding areas of improvement, expressing value in the offerings to ensure customers continue to leverage the solution to maximize their profitability and market share.</li>
-        <li>Manage customer expectations collaboratively with internal & external resources for speedy resolutions.</li>
-        <li>Monitor customer metrics such as adoption, utilization and essential KPIs which enable to define account strategies to ensure quadruple returns on investments.</li>
-        <li>Host product training sessions to ensure utilization & adoption, oversee organizational goals & uphold best practices.</li>
-        <li>Stay updated with industry trends & maintain the high NPS (Net Promoter Score).</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- ONETRUST -->
-  <div class="experience-row">
-    <div class="experience-left">
-      <div class="card">
-        <h3>OneTrust</h3>
-        <h5><i>Customer Success Manager</i></h5>
+      <span class="case-tag">Upsell · +34% adoption</span>
+    </article>
+    <article class="case">
+      <span class="case-num">+56%</span>
+      <div class="case-body">
+        <h3>Netflix</h3>
+        <p>Drove adoption through rigorous training sessions and QBRs.</p>
       </div>
+      <span class="case-tag">Adoption</span>
+    </article>
+    <article class="case">
+      <span class="case-num">150K</span>
+      <div class="case-body">
+        <h3>Jivox Analytics</h3>
+        <p>AI-driven product launch that built trust and opened an upsell.</p>
+      </div>
+      <span class="case-tag">Upsell · +25% adoption</span>
+    </article>
+  </div>
+</section>
+
+<!-- ===== EXPERIENCE ===== -->
+<section id="experience" class="band">
+  <div class="wrap section">
+    <div class="section-head">
+      <h2 class="display">Experience</h2>
+      <span class="eyebrow">02 — From relationships to revenue strategy</span>
     </div>
-    <div class="experience-right">
-      <ul>
-        <li>Act as a point of contact and face of organization with 98% product adoption by clients and 100% customer retention with 125% increase in ARRs.</li>
-        <li>Managed enterprise/strategic & premiere clients worth 10 Million USD ARR and led a team of 5 Customer Success Specialists.</li>
-        <li>Recognize customer goals, business needs & KPIs, build strong relationships by acting as a product consultant, use case optimization.</li>
-        <li>Proactively monitor customer health & ensure a smooth lifecycle from adoption to proficiency.</li>
-        <li>Utilize data analytics to build product opportunities to grow client engagements.</li>
-        <li>Identifying pain points and applying technical expertise to manage bug fixes and escalation.</li>
-        <li>Performed on-site auditing & business reviews.</li>
-      </ul>
+    <div class="jobs">
+      <article class="job">
+        <div class="job-meta">
+          <span class="badge">Current</span>
+          <h3>ThoughtSpot</h3>
+          <span class="role">Senior Customer Success Manager</span>
+          <span class="when">Apr 2025 – Present · India</span>
+          <span class="industry">AI-driven analytics · GenAI</span>
+        </div>
+        <ul>
+          <li>Promoted from CSM to Senior CSM for customer outcomes, strategic account management and cross-functional leadership.</li>
+          <li>Lead 4 CS Associates and 2 CSMs managing <strong>$25M USD</strong> enterprise and <strong>$15M USD</strong> long-tail books.</li>
+          <li>Cut long-tail churn by <strong>12%</strong> with scalable 1:many programs, opening a <strong>$500K USD</strong> expansion opportunity.</li>
+          <li>Use agentic workflows to track customer, industry and usage signals, closing adoption gaps and embedding analytics deeper into workflows.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-meta">
+          <h3>CommerceIQ</h3>
+          <span class="role">Customer Success / Onboarding Manager</span>
+          <span class="when">Jan 2024 – Mar 2025 · India</span>
+          <span class="industry">E-commerce · Digital shelf · Retail media</span>
+        </div>
+        <ul>
+          <li>Managed a <strong>$24M USD</strong> book of business and streamlined the onboarding pipeline.</li>
+          <li>Hired and mentored Associate CSMs, ensuring retention and renewals across their accounts.</li>
+          <li>Aligned customer objectives to the product, tracking adoption, utilization and KPIs to shape account strategy.</li>
+          <li>Ran product training to drive adoption, used AI tools to streamline workflows, and maintained a high NPS.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-meta">
+          <h3>OneTrust</h3>
+          <span class="role">Customer Success Manager</span>
+          <span class="when">Aug 2021 – Dec 2023 · United States</span>
+          <span class="industry">Privacy · GRC · Data governance</span>
+        </div>
+        <ul>
+          <li>Managed enterprise, strategic and premier clients worth <strong>$10M USD ARR</strong>; led a team of 5 CS Specialists.</li>
+          <li>Delivered <strong>98% adoption</strong>, <strong>100% retention</strong> and a <strong>125% increase in ARR</strong>.</li>
+          <li>Technical partner shaping customers' privacy programs through system updates, feature releases and strategy.</li>
+          <li>Resolved escalations with Product, Engineering and Sales; ran on-site audits and executive business reviews.</li>
+        </ul>
+      </article>
     </div>
   </div>
-</div>
+</section>
 
-<div class="section">
-  <h2>CS AGENTS BUILD</h2>
-  <div class="agent">
-    <h3>Renewal Intelligence Agent</h3>
-    <p>An Agent which will forecast the possibility of an account to renew or churn to help CSMs action out quickly to avoid churns.</p>
+<!-- ===== AI AGENTS ===== -->
+<section id="agents" class="wrap section">
+  <div class="section-head">
+    <h2 class="display">AI agents I've built</h2>
+    <span class="eyebrow">03 — Less busywork, earlier signals</span>
   </div>
-  <div class="agent">
-    <h3>CS Call Agent</h3>
-    <p>Capture Snippets from client calls to send summaries to counter parts, keeping them informed.</p>
+  <div class="agents">
+    <article class="agent"><span class="tag">A1</span><h3>Renewal Intelligence</h3><p>Forecasts each account's likelihood to renew or churn two quarters ahead, so CSMs can plan to keep the logo.</p></article>
+    <article class="agent"><span class="tag">A2</span><h3>Call Summarizer</h3><p>Summarizes customer calls and keeps internal counterparts informed with no manual effort.</p></article>
+    <article class="agent"><span class="tag">A3</span><h3>Customer Talk Track</h3><p>Scans the calendar for upcoming customer calls and prepares a value-driven talk track for each.</p></article>
+    <article class="agent"><span class="tag">A4</span><h3>Account Intel</h3><p>Watches public news on every account for expansion signals (launches, acquisitions, funding) and threat signals (layoffs, lost funding).</p></article>
+    <article class="agent"><span class="tag">A5</span><h3>Churn Analysis</h3><p>Looks back at churned accounts each quarter with L1, L2 and L3 root-cause analysis, so the team learns for the next one.</p></article>
+    <article class="agent"><span class="tag">A6</span><h3>Account Usage</h3><p>Turns feature-level usage data into a plain-language story with a red, yellow or green rating, so threat signals don't go unnoticed.</p></article>
   </div>
-  <div class="agent">
-    <h3>CSM Customer Talk Track</h3>
-    <p>The agent will scan through the calendar to look up for the customer calls prepare a talk track for the customer.</p>
-  </div>
-  <div class="agent">
-    <h3>CSM Account Intel Agent</h3>
-    <p>This agent would map the name of the account against the CSM from SFDC and perform a web search on all the account.</p>
-  </div>
-  <div class="agent">
-    <h3>Churn Analysis Agent</h3>
-    <p>This agent would perform a detailed churn analysis at the end of every quarter detailing L1, L2 and L3 level root cause.</p>
-  </div>
-   <div class="agent">
-    <h3>Account Usage Agent</h3>
-    <p>This agent would prepared a worded report of the account usage providing holistic view on the account and based on logic marking the usage as RED/GREEN/Yellow and providing apt messaging to trigger to the customer.</p>
-  </div>
-</div>
+</section>
 
-<div class="section">
-  <h2>Top Brands Worked With</h2>
-  <div class="brand-grid">
-    <div class="brand-item"><img src="coke.png" alt="Coke"></div>
-    <div class="brand-item"><img src="DaVinci_Logo.png" alt="DaVinci"></div>
-    <div class="brand-item"><img src="lululemon.png" alt="Lululemon"></div>
-    <div class="brand-item"><img src="Lyft.png" alt="Lyft"></div>
-    <div class="brand-item"><img src="netflix.png" alt="Netflix"></div>
-    <div class="brand-item"><img src="pepsi.png" alt="Pepsi"></div>
-    <div class="brand-item"><img src="stanleyblack&decker.png" alt="Stanley Black & Decker"></div>
-    <div class="brand-item"><img src="TCPL.png" alt="TCPL"></div>
-    <div class="brand-item"><img src="fiserv.png" alt="Fiserv"></div>
-    <div class="brand-item"><img src="epson.png" alt="Epson America"></div>
+<!-- ===== TOOLKIT + EDUCATION ===== -->
+<section id="toolkit" class="wrap toolkit">
+  <div class="toolkit-main">
+    <div>
+      <span class="eyebrow">04 — Toolkit</span>
+      <h2 class="display" style="margin-top: 8px;">Technical enough to talk to engineers.</h2>
+    </div>
+    <ul class="pills">
+      <li>Gainsight</li><li>Salesforce CRM</li><li>SQL</li><li>Tableau</li><li>R</li><li>Google Analytics</li><li>Excel</li>
+      <li>APIs &amp; Postman</li><li>Kafka</li><li>HTML, CSS, JavaScript</li><li>JIRA &amp; Confluence</li><li>Agile &amp; Scrum</li><li>Data privacy &amp; compliance</li>
+    </ul>
+    <ul class="pills ai">
+      <li class="label">AI tools</li><li>ChatGPT</li><li>Gong</li><li>Chorus</li><li>Glean</li><li>Notion AI</li>
+    </ul>
   </div>
-</div>
+  <div class="edu">
+    <span class="eyebrow">Education</span>
+    <div class="edu-card">
+      <h3>University of Illinois Urbana-Champaign</h3>
+      <span class="deg">MS, Technology Management — Business Data Analytics</span>
+      <span class="when">2020 – 2021 · Champaign, IL</span>
+    </div>
+    <div class="edu-card">
+      <h3>University of Mumbai</h3>
+      <span class="deg">BE, Electronics &amp; Telecommunication Engineering</span>
+      <span class="when">2011 – 2015 · Mumbai</span>
+    </div>
+  </div>
+</section>
 
-</div>
+<!-- ===== BRANDS ===== -->
+<section class="brands" aria-labelledby="brands-title">
+  <div class="wrap">
+    <h2 id="brands-title">Brands I've worked with</h2>
+    <ul>
+      <li>Coca-Cola</li><li>PepsiCo</li><li>Netflix</li><li>Lyft</li><li>lululemon</li>
+      <li>Stanley Black &amp; Decker</li><li>Fiserv</li><li>Epson America</li><li>DaVinci</li><li>Tata Consumer Products</li>
+    </ul>
+  </div>
+</section>
 
-<div class="footer">
-  <p>© 2026 Sarvesh Giri</p>
-</div>
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="wrap contact">
+  <div class="contact-main">
+    <span class="eyebrow">05 — Contact</span>
+    <h2 class="display">Let's grow your customers <span class="accent">together.</span></h2>
+    <div class="btn-row">
+      <a class="btn btn-accent" href="mailto:sarveshpgiri@gmail.com">sarveshpgiri@gmail.com</a>
+      <a class="btn btn-ghost" href="tel:+918355957821">+91 83559 57821</a>
+    </div>
+  </div>
+  <footer class="site-footer">
+    <a href="https://www.linkedin.com/in/sarvesh-giri" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.instagram.com/sarveshg_daily" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://sarveshgiri.substack.com/" target="_blank" rel="noopener">CSM Blog</a>
+    <a href="SarveshGiri_CSM_Resume.pdf" download>Résumé (PDF)</a>
+    <span class="copy">© 2026 Sarvesh Giri</span>
+    <a class="top" href="#top">Back to top
+      <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </a>
+  </footer>
+</section>
 
+</main>
+
+<script>
+  // Mobile menu toggle
+  const toggle = document.querySelector('.nav-toggle');
+  const menu = document.getElementById('mobile-menu');
+  toggle.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Open menu');
+  }));
+
+  // Highlight the nav link for the section on screen
+  const links = document.querySelectorAll('.nav-links a');
+  const setActive = id => links.forEach(l => {
+    const on = l.dataset.section === id;
+    l.classList.toggle('active', on);
+    if (on) l.setAttribute('aria-current', 'true'); else l.removeAttribute('aria-current');
+  });
+  setActive('impact');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+    }, { rootMargin: '-35% 0px -60% 0px' });
+    links.forEach(l => {
+      const el = document.getElementById(l.dataset.section);
+      if (el) observer.observe(el);
+    });
+  }
+</script>
 </body>
 </html>
